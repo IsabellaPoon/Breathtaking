@@ -1,0 +1,168 @@
+.picker {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 460px;
+}
+
+.picker__status {
+  color: var(--chalk-dim);
+}
+
+.picker__row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.picker__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1 1 140px;
+}
+
+.picker__field--grow {
+  flex: 2 1 220px;
+}
+
+.picker__field--reps {
+  flex: 0 1 90px;
+}
+
+.picker__label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--chalk-dim);
+}
+
+.picker select,
+.picker input[type='number'],
+.picker input[type='text'] {
+  background: var(--ink-raised);
+  border: 1.5px solid var(--ink-border);
+  border-radius: 14px;
+  padding: 11px 12px;
+  font-size: 0.95rem;
+  appearance: none;
+  transition: border-color 0.15s ease;
+}
+
+.picker select:hover,
+.picker input:hover {
+  border-color: var(--exertion);
+}
+
+.picker select {
+  background-image: linear-gradient(45deg, transparent 50%, var(--chalk-dim) 50%),
+    linear-gradient(135deg, var(--chalk-dim) 50%, transparent 50%);
+  background-position: calc(100% - 16px) center, calc(100% - 11px) center;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 30px;
+}
+
+.picker input[type='number'] {
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.picker__add-toggle,
+.picker__remove {
+  align-self: flex-start;
+  background: transparent;
+  border: none;
+  color: var(--chalk-dim);
+  font-size: 0.84rem;
+  font-weight: 600;
+  padding: 2px 0;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.picker__add-toggle:hover,
+.picker__remove:hover {
+  color: var(--exertion);
+  text-decoration-color: var(--exertion);
+}
+
+.picker__remove {
+  color: var(--danger);
+}
+
+.picker__add-form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  background: var(--ink-raised);
+  border: 1.5px solid var(--ink-border);
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: var(--shadow-soft);
+}
+
+.picker__add-form input {
+  flex: 1 1 100%;
+}
+
+.picker__add-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.picker__add-save {
+  background: var(--exertion);
+  color: #FFFBF6;
+  border: none;
+  border-radius: 999px;
+  padding: 9px 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.picker__add-cancel {
+  background: transparent;
+  color: var(--chalk-dim);
+  border: 1.5px solid var(--ink-border);
+  border-radius: 999px;
+  padding: 9px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.picker__error {
+  color: var(--danger);
+  font-size: 0.85rem;
+}
+
+.picker__start {
+  margin-top: 4px;
+  background: var(--exertion);
+  color: #FFFBF6;
+  border: none;
+  border-radius: 16px;
+  padding: 16px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.08rem;
+  letter-spacing: 0.005em;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.1s ease, opacity 0.15s ease;
+}
+
+.picker__start:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.picker__start:not(:disabled):hover {
+  transform: translateY(-1px);
+}
+
+.picker__start:not(:disabled):active {
+  transform: translateY(0);
+}

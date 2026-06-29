@@ -1,0 +1,15 @@
+{
+  "name": "breathtaking",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Breathtaking: your gym companion for breathing cues, rest timing, and tracking your sets.",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+    "server": "npm run --prefix server start",
+    "client": "npm run --prefix client dev",
+    "dev": "concurrently -n server,client -c yellow,cyan \"npm run server\" \"npm run client\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}

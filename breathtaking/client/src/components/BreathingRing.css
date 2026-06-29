@@ -1,0 +1,238 @@
+.ring-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  padding: 12px 0 4px;
+}
+
+.ring-screen__top {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.ring-screen__exercise {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--chalk);
+  letter-spacing: -0.005em;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ring-screen__audio-toggle {
+  background: var(--ink-raised);
+  border: 1px solid var(--ink-border);
+  color: var(--chalk-dim);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.ring-screen__audio-toggle:hover {
+  border-color: var(--exertion);
+  color: var(--chalk);
+}
+
+.ring {
+  --ring-color: var(--exertion);
+  --ring-glow: var(--exertion-dim);
+  position: relative;
+  width: 248px;
+  height: 248px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background:
+    radial-gradient(circle at 50% 50%, var(--ring-glow), transparent 72%),
+    var(--ink-raised);
+  box-shadow: var(--shadow-soft);
+  transition: background 0.6s ease, transform 2.4s cubic-bezier(0.45, 0, 0.2, 1);
+}
+
+.ring--inhale {
+  --ring-color: var(--rest);
+  --ring-glow: var(--rest-dim);
+  transform: scale(1.1);
+  transition: background 0.6s ease, transform 2.6s cubic-bezier(0.45, 0, 0.2, 1);
+}
+
+.ring--exhale {
+  --ring-color: var(--exertion);
+  --ring-glow: var(--exertion-dim);
+  transform: scale(0.94);
+  transition: background 0.4s ease, transform 1.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.ring__pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--ring-color);
+  opacity: 0.5;
+}
+
+.ring__core {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-family: var(--font-display);
+  color: var(--chalk);
+}
+
+.ring__count {
+  font-size: 3.4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.ring__target {
+  font-size: 1.3rem;
+  color: var(--chalk-dim);
+  font-weight: 500;
+}
+
+.ring-screen__cue {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  min-height: 1.4em;
+  transition: color 0.4s ease;
+}
+
+.ring-screen__cue--inhale {
+  color: var(--rest);
+}
+
+.ring-screen__cue--exhale {
+  color: var(--exertion);
+}
+
+.ring-screen__hint {
+  color: var(--chalk-dim);
+  font-size: 0.88rem;
+  max-width: 320px;
+  line-height: 1.55;
+}
+
+.ring-screen__audio-note {
+  color: var(--steel);
+  font-size: 0.74rem;
+  max-width: 300px;
+  line-height: 1.4;
+  margin-top: -6px;
+}
+
+.ring-screen__speed {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.ring-screen__speed-label {
+  font-size: 0.78rem;
+  color: var(--chalk-dim);
+  font-weight: 600;
+}
+
+.ring-screen__speed-options {
+  display: flex;
+  gap: 4px;
+  background: var(--ink-raised);
+  border: 1px solid var(--ink-border);
+  border-radius: 999px;
+  padding: 3px;
+}
+
+.ring-screen__speed-btn {
+  background: transparent;
+  border: none;
+  color: var(--chalk-dim);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 13px;
+  border-radius: 999px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.ring-screen__speed-btn.is-active {
+  background: var(--exertion);
+  color: #FFFBF6;
+}
+
+.ring-screen__speed-btn:hover:not(.is-active) {
+  color: var(--chalk);
+}
+
+.ring-screen__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 320px;
+  margin-top: 8px;
+}
+
+.ring-screen__finish,
+.ring-screen__finish-early {
+  border: none;
+  border-radius: 16px;
+  padding: 15px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.02rem;
+}
+
+.ring-screen__finish {
+  background: var(--rest);
+  color: #FFFBF6;
+}
+
+.ring-screen__finish-early {
+  background: transparent;
+  color: var(--chalk-dim);
+  border: 1px solid var(--ink-border);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 11px;
+}
+
+.ring-screen__cancel {
+  background: transparent;
+  color: var(--chalk-dim);
+  border: none;
+  font-size: 0.82rem;
+  padding: 4px;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.15s ease;
+}
+
+.ring-screen__cancel:hover {
+  text-decoration-color: var(--chalk-dim);
+}
+
+@media (max-width: 420px) {
+  .ring {
+    width: 208px;
+    height: 208px;
+  }
+  .ring__count {
+    font-size: 2.8rem;
+  }
+}

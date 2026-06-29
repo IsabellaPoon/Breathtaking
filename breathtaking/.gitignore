@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.log
+server/gym.db
+server/gym.db-shm
+server/gym.db-wal
+.DS_Store

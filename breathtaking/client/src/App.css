@@ -1,0 +1,92 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app__main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 32px 20px 60px;
+}
+
+.app__panel {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.app__intro {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.app__intro h1 {
+  font-size: 1.85rem;
+}
+
+.app__intro p {
+  color: var(--chalk-dim);
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+
+.app__warning {
+  color: var(--danger);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.app__set-summary {
+  color: var(--rest);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.app__rest-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 480px;
+  background: var(--rest-dim);
+  border: 1.5px solid var(--rest);
+  color: var(--chalk);
+  border-radius: 999px;
+  padding: 11px 18px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: -8px;
+}
+
+.app__rest-banner:hover {
+  background: var(--rest);
+  color: #FFFBF6;
+}
+
+.app__rest-banner-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--rest);
+  flex-shrink: 0;
+  animation: navbar-pulse 1.6s ease-in-out infinite;
+}
+
+.app__rest-banner:hover .app__rest-banner-dot {
+  background: #FFFBF6;
+}
+
+@media (max-width: 480px) {
+  .app__main {
+    padding: 20px 16px 48px;
+  }
+}

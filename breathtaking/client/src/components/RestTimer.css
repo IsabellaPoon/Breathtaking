@@ -1,0 +1,116 @@
+.rest {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  padding: 12px 0 4px;
+}
+
+.rest__label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--rest);
+  letter-spacing: -0.005em;
+}
+
+.rest__dial {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: conic-gradient(
+    var(--rest) calc(var(--progress) * 360deg),
+    var(--ink-border) calc(var(--progress) * 360deg)
+  );
+  box-shadow: var(--shadow-soft);
+  transition: background 0.9s linear;
+}
+
+.rest__dial::before {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border-radius: 50%;
+  background: var(--ink-raised);
+}
+
+.rest__time {
+  position: relative;
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--chalk);
+}
+
+.rest__hint {
+  color: var(--chalk-dim);
+  font-size: 0.88rem;
+  max-width: 300px;
+  line-height: 1.55;
+}
+
+.rest__controls {
+  display: flex;
+  gap: 8px;
+}
+
+.rest__controls button {
+  background: var(--ink-raised);
+  border: 1px solid var(--ink-border);
+  color: var(--chalk);
+  border-radius: 999px;
+  padding: 9px 18px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.rest__controls button:hover {
+  border-color: var(--exertion);
+}
+
+.rest__actions {
+  width: 100%;
+  max-width: 300px;
+  margin-top: 4px;
+}
+
+.rest__skip {
+  background: transparent;
+  color: var(--chalk-dim);
+  border: none;
+  font-size: 0.82rem;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.15s ease;
+}
+
+.rest__skip:hover {
+  text-decoration-color: var(--chalk-dim);
+}
+
+.rest__continue {
+  width: 100%;
+  background: var(--rest);
+  color: #FFFBF6;
+  border: none;
+  border-radius: 16px;
+  padding: 15px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.02rem;
+}
+
+@media (max-width: 420px) {
+  .rest__dial {
+    width: 190px;
+    height: 190px;
+  }
+  .rest__time {
+    font-size: 2.5rem;
+  }
+}
