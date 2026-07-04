@@ -6,9 +6,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// --- Exercises ---
-
-// List all exercises, optionally filtered by muscle group
 app.get('/api/exercises', (req, res) => {
   const { muscle_group } = req.query;
   let rows;
@@ -22,7 +19,6 @@ app.get('/api/exercises', (req, res) => {
   res.json(rows);
 });
 
-// Distinct muscle groups, in a sensible fixed order with any custom groups appended
 app.get('/api/muscle-groups', (req, res) => {
   const preferredOrder = ['Chest', 'Back', 'Legs', 'Shoulders', 'Arms', 'Core'];
   const rows = db.prepare('SELECT DISTINCT muscle_group FROM exercises').all();
@@ -51,7 +47,6 @@ app.post('/api/exercises', (req, res) => {
   res.status(201).json(row);
 });
 
-// Delete a custom exercise (seeded ones are protected)
 app.delete('/api/exercises/:id', (req, res) => {
   const row = db.prepare('SELECT * FROM exercises WHERE id = ?').get(req.params.id);
   if (!row) return res.status(404).json({ error: 'Exercise not found.' });
@@ -62,9 +57,7 @@ app.delete('/api/exercises/:id', (req, res) => {
   res.json({ ok: true });
 });
 
-// --- Sets (workout log) ---
-
-// Log a completed set
+// Log a set
 app.post('/api/sets', (req, res) => {
   const { exercise_id, reps_target, reps_completed, duration_seconds, rest_seconds } = req.body;
   if (!exercise_id || reps_target == null || reps_completed == null) {
@@ -113,7 +106,7 @@ app.delete('/api/sets', (req, res) => {
   res.json({ ok: true });
 });
 
-// Today's set count + total reps, for a small stats strip
+// Today's set count + total reps
 app.get('/api/stats/today', (req, res) => {
   const row = db
     .prepare(
