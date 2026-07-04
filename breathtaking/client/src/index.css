@@ -1,19 +1,17 @@
 :root {
-  /* Color tokens — warm, soft, daylight palette */
-  --ink: #FFFBF6;           /* page background: warm paper, not stark white */
-  --ink-raised: #FFFFFF;    /* card background */
-  --ink-border: #F0E2D6;    /* soft border, warm sand */
-  --chalk: #352E38;         /* primary text: soft charcoal-plum, not pure black */
-  --chalk-dim: #8B7F8C;     /* secondary text: muted mauve-gray */
-  --steel: #B6A9B3;         /* tertiary text / timestamps */
-  --exertion: #E8845F;      /* warm terracotta — exhale / effort / primary action */
+  --ink: #FFFBF6;           
+  --ink-raised: #FFFFFF;   
+  --ink-border: #F0E2D6;    
+  --chalk: #352E38;         
+  --chalk-dim: #8B7F8C;    
+  --steel: #B6A9B3;       
+  --exertion: #E8845F;     
   --exertion-dim: rgba(232, 132, 95, 0.14);
-  --rest: #7FA98F;          /* soft sage — inhale / rest / calm */
+  --rest: #7FA98F;         
   --rest-dim: rgba(127, 169, 143, 0.16);
   --danger: #D97373;
   --shadow-soft: 0 8px 24px rgba(180, 130, 110, 0.12);
 
-  /* Type */
   --font-display: 'Fraunces', Georgia, serif;
   --font-body: 'Nunito Sans', 'Helvetica Neue', Arial, sans-serif;
 
